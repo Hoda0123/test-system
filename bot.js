@@ -101,6 +101,16 @@ client.on('message', msg => {
 });
 
 
+  if (message.content.startsWith(prefix + 'name')) {
+    if (message.author.id !== '468804935643824128') return message.reply('** هذا الأمر فقط لصاحب البوت و شكراًً **')
+      client.user.setUsername(argresult).then
+          message.channel.sendMessage(`**${argresult}** : تم تغير الأسم`)
+      return message.reply("**لا تستطيع تغير الأسم الا بعد ساعتين**");
+    }   
+      
+     });
+
+
 var prefix = "h";
 client.on("message", message => {
 
