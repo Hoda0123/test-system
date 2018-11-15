@@ -27,6 +27,13 @@ client.on('message', msg => {
 });
 
 
+client.on('message', msg => {
+  if (msg.content === 'هاى') {
+    msg.reply('** ٌهايات منور :disappointed:**');
+  }
+});
+
+
 
 client.on('message', msg => {
   if (msg.content === 'باك') {
