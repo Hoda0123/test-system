@@ -195,7 +195,7 @@ client.on('guildMemberAdd', member => {
     .setColor('GREEN')
     .setFooter('==== 𝕎𝔼𝕃ℂ𝕆𝕄𝔼 𝕋𝕆 𝕊𝔼ℝ𝕍𝔼ℝ 𝕄𝔸ℝ𝕂𝔼𝕋 ====', 'https://cdn.discordapp.com/attachments/397818254439219217/399292026782351381/shy.png')
 
-var channel =member.guild.channels.find('name', 'الشات-العام')
+var channel =member.guild.channels.find('name', 'cmd')
 if (!channel) return;
 channel.send({embed : embed});
 });
@@ -210,7 +210,7 @@ client.on('guildMemberRemove', member => {
     .setColor('RED')
     .setFooter(`==== نــتــمــنــآ لــكــم آســتــمـــتــآع ====`, 'https://cdn.discordapp.com/attachments/397818254439219217/399292026782351381/shy.png')
 
-var channel =member.guild.channels.find('name', 'الشات-العام')
+var channel =member.guild.channels.find('name', 'cmd')
 if (!channel) return;
 channel.send({embed : embed});
 })
