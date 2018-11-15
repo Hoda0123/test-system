@@ -118,7 +118,7 @@ client.on('ready', () => {
       console.log(`ON ${client.guilds.size} Servers '     Script By : i1Suhaib ' `);
     console.log(`----------------`);
   console.log(`Logged in as ${client.user.tag}!`);
-client.user.setGame(`https://discord.gg/pm6Tk8z`,"http://twitch.tv/S-F")
+client.user.setGame(`ArsNaL`,"http://twitch.tv/S-F")
 client.user.setStatus("dnd")
 });
 
