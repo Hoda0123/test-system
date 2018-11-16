@@ -100,18 +100,6 @@ client.on('message', msg => {
   }
 });
 
-client.on("ready", () => {
-    var guild;
-    while (!guild)
-        guild = client.guilds.get("468811298000601088 - Server id");
-    guild.fetchInvites().then((data) => {
-        data.forEach((Invite, key, map) => {
-            var Inv = Invite.code;
-            dat[Inv] = Invite.uses;
-        });
-    });
-});
- 
  
  
 client.on("guildMemberAdd", (member) => {
