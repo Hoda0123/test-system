@@ -185,7 +185,13 @@ client.on("guildMemberAdd", member => {
 }).catch(console.error)
 })
 
+   client.on('ready', () => {
+    setInterval(function(){
+        client.guilds.get('468811298000601088').roles.find('name', 'DISCO').edit({color: 'RANDOM'})
+    },5000);
+  
 
+})
 
 client.on('guildMemberAdd', member => {
     var embed = new Discord.RichEmbed()
