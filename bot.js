@@ -187,7 +187,7 @@ client.on("guildMemberAdd", member => {
 }).catch(console.error)
 })
 
-var prefix = "3";
+var prefix = "h";
 
 if (message.content.startsWith(prefix + 'name')) {
     if (message.author.id !== '468804935643824128') return message.reply('** هذا الأمر فقط لصاحب البوت و شكراًً **')
