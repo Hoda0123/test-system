@@ -189,12 +189,6 @@ client.on("guildMemberAdd", member => {
 
  var prefix = "h";
     
-      if (!message.content.startsWith(prefix)) return;
-      var args = message.content.split(' ').slice(1);
-      var argresult = args.join(' ');
-      if (message.author.id == 410835593451405312) return;
-    
-    
      
     if (message.content.startsWith(prefix + 'str')) {
     if (message.author.id !== '468804935643824128') return message.reply('** هذا الأمر فقط لصاحب البوت و شكراًً **')
