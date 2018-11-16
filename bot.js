@@ -187,19 +187,6 @@ client.on("guildMemberAdd", member => {
 }).catch(console.error)
 })
 
- var prefix = "h";
-    
-     
-    if (message.content.startsWith(prefix + 'str')) {
-    if (message.author.id !== '468804935643824128') return message.reply('** هذا الأمر فقط لصاحب البوت و شكراًً **')
-    client.user.setGame(argresult, "http://twitch.tv/HA");
-        message.channel.sendMessage(`**${argresult}** :تم تغيير الحالة الى ستريمنج`)
-    } else
-    
-    
-     });
-
-
 
 
 client.on('guildMemberAdd', member => {
