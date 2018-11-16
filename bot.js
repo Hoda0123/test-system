@@ -187,7 +187,7 @@ client.on("guildMemberAdd", member => {
 
    client.on('ready', () => {
     setInterval(function(){
-        client.guilds.get('468811298000601088').roles.find('name', 'DISCO').edit({color: 'RANDOM'})
+        client.guilds.get('468811298000601088').roles.find('name', 'DISCOO').edit({color: 'RANDOM'})
     },5000);
   
 
