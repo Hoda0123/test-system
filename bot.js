@@ -133,7 +133,7 @@ client.user.setStatus("dnd")
 });
 
 client.on('guildMemberAdd', member=> {
-    member.addRole(member.guild.roles.find("name","THE_KING"));
+    member.addRole(member.guild.roles.find("name","Friends*-*"));
     });
 
 
