@@ -102,7 +102,7 @@ client.on('message', msg => {
  
 
 
-var prefix = "h";
+var prefix = "^";
 client.on("message", message => {
 
             if (message.content.startsWith(prefix + "bc")) {
@@ -180,7 +180,7 @@ client.on('guildMemberAdd', member => {
 });
 
 client.on("message", message => {
-              var args = message.content.substring(prefix.length).split("h");
+              var args = message.content.substring(prefix.length).split("^");
               if (message.content.startsWith(prefix + "مسح")) {
                   if(!message.channel.guild) return message.reply('**:x: اسف لكن هذا الامر للسيرفرات فقط **');         
      if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply('**⚠  لا يوجد لديك صلاحية لمسح الشات**');
