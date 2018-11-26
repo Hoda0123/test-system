@@ -153,6 +153,7 @@ client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
 });
 
+
 client.on("guildMemberRemove", member => {
   let guild = member.guild;
   guild.defaultChannel.sendMessage("", {embed: {
@@ -166,6 +167,8 @@ client.on("guildMemberRemove", member => {
 }}).catch(console.error);
   }
 );
+
+
 client.on("guildMemberAdd", member => {
   let guild = member.guild;
   guild.defaultChannel.sendMessage("", {embed: {
