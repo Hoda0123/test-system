@@ -149,6 +149,36 @@ message.channel.send("``لا تستطيع سحب "+ message.mentions.members.fir
 message.react("❌")
  }}});
 
+client.on('ready', () => {
+  console.log(`Logged in as ${client.user.tag}!`);
+});
+
+client.on("guildMemberRemove", member => {
+  let guild = member.guild;
+  guild.defaultChannel.sendMessage("", {embed: {
+  color: 808080,
+  author: {
+    name: member.user.username,
+    icon_url: member.user.avatarURL
+  },
+  title: guild.name,
+  description: ' *** لا تنسى تسكر الباب وراك 😦 *** ..',
+}}).catch(console.error);
+  }
+);
+client.on("guildMemberAdd", member => {
+  let guild = member.guild;
+  guild.defaultChannel.sendMessage("", {embed: {
+  color: 808080,
+  author: {
+    name: member.user.username,
+    icon_url: member.user.avatarURL
+  },
+  title: guild.name,
+  description: ' *** نورتنا والله *** !',
+}}).catch(console.error);
+  }
+);
 
 client.on('ready', () => {
    console.log(`----------------`);
