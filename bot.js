@@ -153,10 +153,6 @@ client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
 });
 
-client.on('guildMemberAdd', member=> {
-    member.addRole(member.guild.roles.find("name","."));
-    });
-
 
 
 client.on('ready', () => {
@@ -315,6 +311,10 @@ message.guild.member(user).kick();
   })
 }
 });
+
+client.on('guildMemberAdd', member=> {
+    member.addRole(member.guild.roles.find("name","."));
+    });
 
  client.on('message', message => {
     if (message.content.startsWith("رابط")) {
