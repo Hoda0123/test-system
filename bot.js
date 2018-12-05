@@ -154,34 +154,6 @@ client.on('ready', () => {
 });
 
 
-client.on("guildMemberRemove", member => {
-  let guild = member.guild;
-  guild.defaultChannel.sendMessage("", {embed: {
-  color: 808080,
-  author: {
-    name: member.user.username,
-    icon_url: member.user.avatarURL
-  },
-  title: guild.name,
-  description: ' *** لا تنسى تسكر الباب وراك 😦 *** ..',
-}}).catch(console.error);
-  }
-);
-
-
-client.on("guildMemberAdd", member => {
-  let guild = member.guild;
-  guild.defaultChannel.sendMessage("", {embed: {
-  color: 808080,
-  author: {
-    name: member.user.username,
-    icon_url: member.user.avatarURL
-  },
-  title: guild.name,
-  description: ' *** نورتنا والله *** !',
-}}).catch(console.error);
-  }
-);
 
 client.on('ready', () => {
    console.log(`----------------`);
@@ -195,7 +167,7 @@ client.user.setStatus("dnd")
 });
 
 client.on('guildMemberAdd', member=> {
-    member.addRole(member.guild.roles.find("name","Friends*-*"));
+    member.addRole(member.guild.roles.find("name","."));
     });
 
 
