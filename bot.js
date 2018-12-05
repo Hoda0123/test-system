@@ -243,8 +243,8 @@ client.on('guildMemberAdd', member => {
 });
 
 client.on("message", message => {
-              var args = message.content.substring(prefix.length).split("~");
-              if (message.content.startsWith(prefix + "مسح")) {
+              var args = message.content.substring(prefix.length).split("م");
+              if (message.content.startsWith(prefix + "سح")) {
                   if(!message.channel.guild) return message.reply('**:x: اسف لكن هذا الامر للسيرفرات فقط **');         
      if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply('**⚠  لا يوجد لديك صلاحية لمسح الشات**');
           var msg;
