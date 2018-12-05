@@ -166,9 +166,6 @@ client.user.setGame(`ArsNaL`,"http://twitch.tv/S-F")
 client.user.setStatus("dnd")
 });
 
-client.on('guildMemberAdd', member=> {
-    member.addRole(member.guild.roles.find("name","."));
-    });
 
 
 client.on("message", function(message) {
