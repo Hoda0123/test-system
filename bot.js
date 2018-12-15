@@ -369,6 +369,80 @@ message.guild.member(user).kick();
 }
 });
 
+
+client.on('message', message => {
+  var prefix = '%';
+
+  if (message.content.startsWith(prefix + "removerole")) {
+    let clientbot = message.guild.me;
+if (clientbot.hasPermission("MANAGE_ROLES")) {
+  if (!message.member.hasPermission("MANAGE_ROLES")) {
+    if(mention.highestRole.position >= message.guild.member(message.author).highestRole.positon) return message.reply('**لا يمكنك اعطاء لميوت شخص رتبته اعلى منك**')
+    if(mention.highestRole.positon >= message.guild.member(client.user).highestRole.positon) return message.reply('**لا يمكنني اعطاء ميوت لشخص رتبته اعلى مني**')
+    message.react("❌")
+  } else {
+    let args = message.content.split(' ').slice(1).join(' ');
+  let args2 = message.content.split(' ').slice(2).join(' ');
+  if (message.mentions.users.size === 0) {
+    const embed = new Discord.RichEmbed()
+    .setColor("#fff")
+    .setTitle(" أمثله على الأوامر : ")
+    .setDescription(`
+    **#role @Moha Mod** : لأعطاء رتبة لشخص 
+    **#remove @Moha Mod** : لأزاله رتبة من شخص
+    **#role all Guest** : لاعطاء رتبة للجميع
+    **#role bots System** : لاعطاء رتبة لجميع البوتات
+    **#role humans User** : لاعطاء رتبة للأشخاص فقط`)
+    .setFooter('Requested by '+message.author.username, message.author.avatarURL)
+
+  message.channel.send({ embed: embed });
+  } else {
+    var mentioned = message.mentions.members.first().id;
+    var mgm = message.guild.members.get(mentioned)
+    var role = message.guild.roles.find("name", args2)
+    let hasrole = mgm.roles.has("name", args)
+    if (args2) {
+      if (role) {
+        if (mgm.roles.has(role.id)) {
+        mgm.removeRole(role)
+        const roleremoved = new Discord.RichEmbed()
+          .addField(`**Role Removed!!**`, `**:white_check_mark:| The role **${args2}** has been removed from <@${mgm.id}>**`)
+          .setColor("#fff")
+          message.channel.send(roleremoved)
+        } else {
+          message.channel.send("**:x: |"+mgm.user.tag+"** doesn't have the role **" + role.name + "**!")
+        }
+      } else {
+        message.channel.send("**:x: |The role Named **``"+args2+"``** doesn't exist!**")
+      }
+
+    } else {
+      const embed1 = new Discord.RichEmbed()
+      .setColor("#fff")
+      .setTitle(" أمثله على الأوامر : ")
+      .setDescription(`
+      **#role @Moha Mod** : لأعطاء رتبة لشخص 
+      **#remove @Moha Mod** : لأزاله رتبة من شخص
+      **#role all Guest** : لاعطاء رتبة للجميع
+      **#role bots System** : لاعطاء رتبة لجميع البوتات
+      **#role humans User** : لاعطاء رتبة للأشخاص فقط`)
+      .setFooter('Requested by '+message.author.username, message.author.avatarURL)
+
+    message.channel.send({ embed: embed1 });    }
+  }
+}
+} else {
+const botnoperm = new Discord.RichEmbed()
+        .setColor("#fff")
+        .addField("❌ Permission Error ❌", `I don't have perms to add roles to users!\nNeeded Permission: **MANAGE_ROLES**`)
+
+        message.channel.send(botnoperm)
+}
+}
+});
+  
+
+
 client.on('guildMemberAdd', member=> {
     member.addRole(member.guild.roles.find("name","."));
     });
