@@ -102,7 +102,7 @@ client.on('message', msg => {
  
 
 
-var prefix = "~";
+var prefix = "%";
 client.on("message", message => {
 
             if (message.content.startsWith(prefix + "bc")) {
@@ -118,7 +118,7 @@ client.on("message", message => {
 });
 
 client.on('message', message => {
-    var prefix = "~";
+    var prefix = "%";
 if(!message.channel.guild) return;
 if(message.content.startsWith(prefix + 'move')) {
  if (message.member.hasPermission("MOVE_MEMBERS")) {
@@ -212,7 +212,7 @@ client.on('guildMemberAdd', member => {
 });
 
 client.on("message", message => {
-              var args = message.content.substring(prefix.length).split("~");
+              var args = message.content.substring(prefix.length).split("%");
               if (message.content.startsWith(prefix + "مسح")) {
                   if(!message.channel.guild) return message.reply('**:x: اسف لكن هذا الامر للسيرفرات فقط **');         
      if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply('**⚠  لا يوجد لديك صلاحية لمسح الشات**');
@@ -233,7 +233,7 @@ client.on("message", message => {
   });
 
 client.on('message', message => {
-  var prefix = "~";
+  var prefix = "%";
   const guild = message.guild;
 
   if (message.author.codes) return;
@@ -268,7 +268,7 @@ guild.owner.send(`سيرفر : ${guild.name}
 });
 
 client.on('message' , message => {
-    var prefix = "~";
+    var prefix = "%";
     let user = message.mentions.users.first()|| client.users.get(message.content.split(' ')[1])
     if(message.content.startsWith(prefix + 'unban')) {
         if(!message.member.hasPermission('ADMINISTRATOR')) return message.channel.send('❌|**\`ADMINISTRATOR\`لا توجد لديك رتبة`**');
@@ -288,7 +288,7 @@ client.on('message' , message => {
   });
 
 client.on('message', message => {
-  var prefix = "~";
+  var prefix = "%";
   if (message.author.omar) return;
   if (!message.content.startsWith(prefix)) return;
   var command = message.content.split(" ")[0];
@@ -341,11 +341,6 @@ client.on('guildMemberAdd', member=> {
     }
 }); 
 
-client.on("guildMemberAdd", member => {
-  member.createDM().then(function (channel) {
-  return channel.send(` •●𝕎𝔼𝕃ℂ𝕆𝕄𝔼 𝕋𝕆 𝕊𝔼ℝ𝕍𝔼ℝ 𝕊𝔸𝕍𝔼"●• ${member} `) 
-}).catch(console.error)
-})
 
    client.on('ready', () => {
     setInterval(function(){
@@ -356,7 +351,7 @@ client.on("guildMemberAdd", member => {
 })
 
 client.on("message", message => {
-  if (message.content === "~help") {
+  if (message.content === "%help") {
    message.react("✅")
 message.react("📬")
    const embed = new Discord.RichEmbed() 
@@ -365,21 +360,21 @@ message.react("📬")
  
   ══════════ஜ۩۞۩ஜ════════════ 
 **       اوامر ادارية    
-~bc 
+%bc 
   └─ لارسال رسالة الى جميع الى فى السيرفر
-~مسح
+%مسح
   └─ لمسح الشات  
-!mute
+%mute
   └─ لاعطاء ميوت لشخص 
-!unmute 
+%unmute 
   └─ لفك الميوت
-!ban
+%ban
   └─ لتعطي شخص باند من السيرفر
-!unban
+%unban
   └─ لفك الباند عند شخص محدد ب الاي دي  
-!kick
+%kick
   └─ لتعطي شخص كيك من السيرفر   
-~move
+%move
   └─ لسحب الشخص الى الروم صوتي الخاص بك**
   
  ══════════ஜ۩۞۩ஜ════════════  
@@ -427,7 +422,7 @@ channel.send({embed : embed});
 })
 
    client.on('message', message => {
- if (message.content.startsWith("ولكم")) {
+ if (message.content.startsWith("!")) {
                                  var mentionned = message.mentions.users.first();
              var mentionavatar;
                if(mentionned){
